@@ -1,0 +1,19 @@
+# Dependencies
+node_modules
+
+# Nuxt
+.nuxt
+.output
+dist
+.nitro
+.cache
+
+# Env (секрети не комітити)
+.env
+.env.*
+!.env.example
+
+# IDE / OS
+.DS_Store
+*.log
+*.local
