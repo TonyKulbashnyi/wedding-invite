@@ -2,7 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Sloop Script Pro';
+  src: url('./fonts/Sloop%20Script%20Pro.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    font-family: Lora, Georgia, serif;
+  }
+}
+
 body {
-  @apply bg-cream text-charcoal font-sans;
+  @apply bg-cream text-charcoal font-normal;
 }
 

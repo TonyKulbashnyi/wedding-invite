@@ -1,52 +1,104 @@
 <template>
   <div class="min-h-screen flex flex-col bg-cream text-charcoal">
+    <div class="desktop-modal">
+      <p class="desktop-modal__text font-script ">
+        Відкрийте запрошення на телефоні
+      </p>
+    </div>
     <main>
-      <section class="py-16 px-6 flex items-center justify-center min-h-[70vh]">
-        <div class="max-w-xl text-center">
-          <p class="tracking-[0.3em] text-xs uppercase text-taupe mb-4">
-            Запрошення на весілля
-          </p>
-          <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl text-charcoal mb-4">
-            Іван &amp; Марія
-          </h1>
-          <p class="text-sm tracking-[0.3em] uppercase text-taupe mb-6">
-            09 · 09 · 2026
-          </p>
-          <p class="text-sm sm:text-base text-charcoal/80 leading-relaxed">
-            Ми з радістю запрошуємо вас розділити з нами день, коли ми скажемо
-            одне одному «так». Нехай цей вечір буде наповнений світлом, музикою та
-            теплом близьких сердець.
-          </p>
-        </div>
-      </section>
-
-      <InviteBlock />
-      <LocationBlock />
-      <TimingBlock />
-      <DresscodeBlock />
-      <FeedbackForm />
-      <InfoBlock />
+    
+      <Greeting />
+      <div ref="overlapRef" class="overlap">
+        <Invite />
+        <Location />
+      </div>
+      <Timing :style="overlapScrolled ? { zIndex: 1 } : {}" />
+      <div class="overlap overlap--second">
+        <Dresscode />
+        <DresscodeContent />
+        <FeedbackForm />
+        <Info />
+        <AppFooter />
+      </div>
     </main>
 
-    <AppFooter />
+  
   </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue';
+import { ref, watch, onMounted, onUnmounted } from 'vue';
+import { useRoute } from 'vue-router';
 import { useGuestStore } from '~/stores/guestStore';
 
-import InviteBlock from '~/components/InviteBlock.vue';
-import LocationBlock from '~/components/LocationBlock.vue';
-import TimingBlock from '~/components/TimingBlock.vue';
-import DresscodeBlock from '~/components/DresscodeBlock.vue';
-import FeedbackForm from '~/components/FeedbackForm.vue';
-import InfoBlock from '~/components/InfoBlock.vue';
-import AppFooter from '~/components/AppFooter.vue';
+const overlapRef = ref<HTMLElement | null>(null);
+const overlapScrolled = ref(false);
 
+function onScroll() {
+  if (!overlapRef.value) return;
+  const rect = overlapRef.value.getBoundingClientRect();
+  overlapScrolled.value = rect.bottom <= window.innerHeight;
+}
+
+onMounted(() => window.addEventListener('scroll', onScroll, { passive: true }));
+onUnmounted(() => window.removeEventListener('scroll', onScroll));
+
+import Invite from '~/components/Invite.vue';
+import Location from '~/components/Location.vue';
+import Timing from '~/components/Timing.vue';
+import Dresscode from '~/components/Dresscode.vue';
+import FeedbackForm from '~/components/FeedbackForm.vue';
+import Info from '~/components/Info.vue';
+import AppFooter from '~/components/AppFooter.vue';
+import Greeting from '~/components/Greeting.vue';
+
+const route = useRoute();
 const guestStore = useGuestStore();
 
-onMounted(() => {
-  guestStore.initFromUrl();
-});
+watch(
+  () => route.query,
+  (q) => guestStore.initFromUrl(q as Record<string, unknown>),
+  { deep: true, immediate: true }
+);
 </script>
+<style lang="scss" scoped>
+.desktop-modal {
+  display: none;
+
+  @media (min-width: theme('screens.lg')) {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-color: theme('colors.cream');
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  &__text {
+    max-width: 720px;
+    text-align: center;
+    font-size: 3.5rem;
+    line-height: 1.6;
+    color: theme('colors.green');
+  }
+}
+
+@media (min-width: theme('screens.lg')) {
+  :global(body) {
+    overflow: hidden;
+  }
+}
+
+.overlap {
+  position: relative;
+  z-index: 2;
+  top: 100vh;
+  background: theme('colors.capuccino');
+
+  &--second {
+    top: 200vh;
+  }
+}
+</style>
