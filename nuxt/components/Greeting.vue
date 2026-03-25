@@ -1,5 +1,5 @@
 <template>
-  <section class="greeting bg-cream relative py-16 px-6 flex flex-col items-center justify-between min-h-[100vh] overflow-hidden">
+  <section class="greeting bg-cream relative py-16 px-6 flex flex-col items-center justify-between min-h-[100dvh] overflow-hidden">
     <div class="slideshow">
       <div
         v-for="(img, i) in images"

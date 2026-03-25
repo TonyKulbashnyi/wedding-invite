@@ -167,7 +167,7 @@ async function handleSubmit() {
 
 <style lang="scss" scoped>
 .rsvp {
-  height: calc(100vh + 15rem);
+  height: calc(100dvh + 15rem);
   display: flex;
   align-items: center;
   justify-content: center;
