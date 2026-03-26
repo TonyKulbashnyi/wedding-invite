@@ -47,7 +47,7 @@ const swatches: Swatch[] = [
 .dresscode {
   &-content {
     position: sticky;
-    top: 35vh;
+    top: 35dvh;
     display: flex;
     flex-direction: row;
     align-items: flex-end;
