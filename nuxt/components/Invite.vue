@@ -35,7 +35,7 @@
             09.09.2026
           </p>
           <p
-            class="invite__info-script-tagline text-xl sm:text-2xl  text-green/90 leading-tight"
+            class="invite__info-script-tagline text-lg   text-green/90 leading-tight"
           >
             День, коли ми станемо сім'єю
           </p>

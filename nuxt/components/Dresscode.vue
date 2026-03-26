@@ -1,6 +1,6 @@
 <template>
   <section id="dresscode" class="dresscode bg-cream mx-auto">
-    <div class="dresscode__header pt-14">
+    <div class="dresscode__header pt-10">
       <h2
         class="dresscode-title px-6 relative z-10 pb-4 md:mb-mx-auto text-center font-script text-7xl md:text-8xl text-green leading-none"
       >
@@ -22,7 +22,7 @@
   top: 0;
   display: flex;
   flex-direction: column;
-  height: 100dvh;
+  height: 110dvh;
   min-height: 0;
   overflow: hidden;
   box-sizing: border-box;
