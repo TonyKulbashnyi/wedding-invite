@@ -2,6 +2,9 @@ import { defineNuxtConfig } from 'nuxt/config';
 
 export default defineNuxtConfig({
   srcDir: 'nuxt/',
+  dir: {
+    public: 'nuxt/public',
+  },
   modules: ['@pinia/nuxt'],
   css: ['~/assets/main.css'],
   app: {
@@ -21,6 +24,9 @@ export default defineNuxtConfig({
         { name: 'twitter:image', content: '/og-image.jpg' },
       ],
       link: [
+        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/wedding-rings.png' },
+        { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/wedding-rings.png' },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/wedding-rings.png' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap' },
