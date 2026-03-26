@@ -27,9 +27,6 @@
         </p>
       </div>
     </div>
-    <div class="mt-6 text-center text-[0.65rem] text-birch/80">
-      &copy; 2026 Aнтон &amp; Олеся
-    </div>
   </footer>
 </template>
 

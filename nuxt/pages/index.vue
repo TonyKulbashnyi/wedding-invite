@@ -98,7 +98,7 @@ watch(
   background: theme('colors.capuccino');
 
   &--second {
-    top: 250dvh;
+    top: 230dvh;
   }
 }
 </style>
