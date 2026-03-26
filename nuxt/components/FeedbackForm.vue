@@ -167,18 +167,18 @@ async function handleSubmit() {
 
 <style lang="scss" scoped>
 .rsvp {
-  height: calc(100dvh + 15rem);
+  height: calc(100dvh + 50rem);
   display: flex;
   align-items: center;
   justify-content: center;
   background-image: v-bind("'url(' + photo6 + ')'");
   background-size: cover;
   background-position: center;
-  top: 15rem;
+  top: 50rem;
 
   &__form {
     position: relative;
-    top: calc(-15rem/2);
+    top: calc(-50rem/2);
   }
 }
 
