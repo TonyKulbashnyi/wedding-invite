@@ -1,5 +1,9 @@
 <template>
-  <section id="dresscode-content" class="dresscode-content bg-cream mx-auto pb-20">
+  <section
+    id="dresscode-content"
+    class="dresscode-content bg-cream mx-auto pb-20"
+    :class="{ 'dresscode-content--visible': visible }"
+  >
     <div
       class="dresscode-content__swatches flex flex-col align-left flex-wrap gap-4"
     >
@@ -25,6 +29,8 @@
 <script setup lang="ts">
 import Dresscode from "~/assets/img/dresscode.png";
 
+defineProps<{ visible?: boolean }>();
+
 interface Swatch {
   label: string;
   hex: string;
@@ -46,15 +52,20 @@ const swatches: Swatch[] = [
 <style lang="scss" scoped>
 .dresscode {
   &-content {
-    position: sticky;
-    top: 30dvh;
+    transform: translateY(60px);
+    opacity: 0;
+    transition: transform 1.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 1.5s ease;
+
+    &--visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     gap: 2rem;
 
     @media (min-width: theme("screens.md")) {
-      top: 25vh;
       align-items: flex-start;
     }
 

@@ -1,8 +1,8 @@
 <template>
-  <section id="dresscode" class="dresscode bg-cream mx-auto">
+  <section id="dresscode" ref="sectionRef" class="dresscode bg-cream mx-auto">
     <div class="dresscode__header pt-8">
       <h2
-        class="dresscode-title px-6 relative z-10 pb-3 md:mb-mx-auto text-center font-script text-7xl md:text-8xl text-green leading-none"
+        class="dresscode-title px-6 relative z-10 pb-4 md:mb-mx-auto text-center font-script text-7xl md:text-8xl text-green leading-none"
       >
         Дресс-код
       </h2>
@@ -13,8 +13,37 @@
         illo.
       </p>
     </div>
+    <DresscodeContent :visible="isVisible" />
   </section>
 </template>
+
+<script setup lang="ts">
+import { onMounted, onBeforeUnmount, ref } from 'vue';
+
+const sectionRef = ref<HTMLElement | null>(null);
+const isVisible = ref(false);
+
+let observer: IntersectionObserver | null = null;
+
+onMounted(() => {
+  observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        isVisible.value = true;
+      }
+    },
+    { threshold: 0.8 }
+  );
+
+  if (sectionRef.value) {
+    observer.observe(sectionRef.value);
+  }
+});
+
+onBeforeUnmount(() => {
+  observer?.disconnect();
+});
+</script>
 
 <style lang="scss" scoped>
 .dresscode {

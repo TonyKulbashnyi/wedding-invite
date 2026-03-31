@@ -38,7 +38,7 @@ onMounted(() => {
   if (images.length <= 1) return
   interval = setInterval(() => {
     currentIndex.value = (currentIndex.value + 1) % images.length
-  }, 5000)
+  }, 3000)
 })
 
 onUnmounted(() => {

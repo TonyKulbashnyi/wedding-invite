@@ -13,7 +13,16 @@
         iste cupiditate repellendus porro reiciendis dignissimos voluptates
         illo.
       </p>
-
+      <div class="mt-6">
+        <a
+          href="https://drive.google.com/file/d/1mhx5i_zviODrCanyxNh59yJyofIU4jJc/view"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="info__btn"
+        >
+          Квіткова підписка
+        </a>
+      </div>
     </div>
   </section>
 </template>
@@ -44,3 +53,18 @@ const parallaxStyle = computed(() => {
   };
 });
 </script>
+
+<style lang="scss" scoped>
+.info__btn {
+  display: inline-block;
+  background-color: theme('colors.moss');
+  color: #fff;
+  padding: 0.75rem 1.75rem;
+  text-decoration: none;
+  font-weight: 500;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+</style>

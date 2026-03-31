@@ -15,7 +15,6 @@
       <Timing :style="overlapScrolled ? { zIndex: 1 } : {}" />
       <div class="overlap overlap--second">
         <Dresscode />
-        <DresscodeContent />
         <FeedbackForm />
         <Info />
         <AppFooter />
