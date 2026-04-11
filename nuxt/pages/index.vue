@@ -124,11 +124,11 @@ watch(
 .overlap {
   position: relative;
   z-index: 2;
-  top: 100dvh;
+  top: 100vh;
   background: theme('colors.capuccino');
 
   &--second {
-    top: 230dvh;
+    top: 230vh;
   }
 }
 </style>

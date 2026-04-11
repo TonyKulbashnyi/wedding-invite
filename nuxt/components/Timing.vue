@@ -47,7 +47,7 @@ const slots = [
 .timing {
   display: flex;
   flex-direction: column;
-  height: 100dvh;
+  height: 100vh;
   box-sizing: border-box;
   background-image: v-bind("'url(' + timingBg + ')'");
   background-size: cover;
