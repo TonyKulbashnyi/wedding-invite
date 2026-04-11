@@ -37,14 +37,14 @@ interface Swatch {
 }
 
 const swatches: Swatch[] = [
-  { label: "Хвоя", hex: "#3b421d" },
-  { label: "Мох", hex: "#646940" },
-  { label: "Шавлія", hex: "#a8ae85" },
-  { label: "Графіт", hex: "#4a4a48" },
-  { label: "Береза", hex: "#cac7c1" },
-  { label: "Тауп", hex: "#9c8f7a" },
-  { label: "Травентин", hex: "#d5cbb8" },
-  { label: "Земля", hex: "#71614a" },
+  { label: "Хвоя", hex: "#3b411f" },
+  { label: "Мох", hex: "#5f6342" },
+  { label: "Шавлія", hex: "#a5a988" },
+  { label: "Графіт", hex: "#383837" },
+  { label: "Береза", hex: "#c8c5bc" },
+  { label: "Тауп", hex: "#958979" },
+  { label: "Травентин", hex: "#cdc1a8" },
+  { label: "Земля", hex: "#573e24" },
 ];
 </script>
 <style lang="scss" scoped>
