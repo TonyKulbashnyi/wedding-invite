@@ -21,16 +21,16 @@ import timingBg from '~/assets/img/4.jpeg';
 
 const slots = [
   {
+    time: '13:00',
+    title: 'Welcome',
+  },
+  {
     time: '14:00',
     title: 'Церемонія',
   },
   {
-    time: '16:00',
+    time: '15:00',
     title: 'Банкет',
-  },
-  {
-    time: '18:00',
-    title: 'Танці',
   },
   {
     time: '20:00',
@@ -38,7 +38,7 @@ const slots = [
   },
   {
     time: '22:00',
-    title: 'Додомцю',
+    title: 'Завершення вечора',
   },
 ];
 </script>

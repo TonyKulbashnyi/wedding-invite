@@ -1,22 +1,21 @@
 <template>
   <section id="rsvp" class="rsvp relative z-2 px-6">
-    <div class="rsvp__form max-w-2xl mx-auto border border-white/10 bg-charcoal/80 backdrop-blur-sm p-6 sm:p-8">
+    <div class="rsvp__form text-center max-w-2xl mx-auto border border-white/10 bg-charcoal/80 backdrop-blur-sm p-6 sm:p-8">
       <div class="mb-6">
-        <h2 class="font-serif text-2xl sm:text-3xl text-white mb-2">
-          Підтвердіть, будь ласка, присутність
+        <h2 class="font-serif text-2xl sm:text-3xl text-white mb-4">
+          Підтвердіть, будь ласка, вашу присутність
         </h2>
-        <p class="text-sm text-white">
-          Нам важливо знати, що ви будете з нами цього дня, щоб підготувати все з любов'ю та турботою.
+        <p class="text-md text-white ">
+          Планування кожної деталі потребує часу та уваги — ваша відповідь допоможе зробити свято комфортним для кожного гостя 
         </p>
       </div>
-
       <form class="space-y-5" @submit.prevent="handleSubmit">
 
-        <div class="space-y-2">
-          <p class="block text-xs font-medium tracking-[0.2em] uppercase text-white">
-            Імена Гостей
+        <div class="space-y-4">
+          <p class="block text-left text-md font-medium tracking-[0.1em] uppercase text-white">
+            Позначте, хто приєднається:
           </p>
-          <div class="space-y-1 text-sm text-white">
+          <div class="space-y-4 text-sm text-white">
             <label
               v-for="name in guestNames"
               :key="name"
@@ -32,9 +31,9 @@
           </div>
         </div>
 
-        <div class="space-y-2">
-          <p class="block text-xs font-medium tracking-[0.2em] uppercase text-white">
-            Напої
+        <div class="space-y-4">
+          <p class="text-left block text-md font-medium tracking-[0.1em] uppercase text-white">
+            Побажання щодо напоїв:
           </p>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-white">
             <label
@@ -55,9 +54,9 @@
 
         <div class="text-xs text-white/50">
           <p>
-            Будь ласка, надішліть відповідь до
-            <span class="font-semibold text-white">1 червня 2026</span>,
-            щоб ми змогли все ретельно спланувати.
+            <span class="font-semibold text-white">Просимо надіслати підтвердження до 1 червня 2026 року,</span>
+            щоб була можливість врахувати всі побажання при плануванні свята.
+
           </p>
         </div>
 
@@ -79,7 +78,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue';
+import { computed, ref } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useGuestStore } from '~/stores/guestStore';
 import photo6 from '~/assets/img/7.jpeg';
@@ -107,10 +106,6 @@ const guestNames = computed(() => {
 });
 
 const selectedGuests = ref<string[]>([]);
-
-watch(guestNames, (names) => {
-  selectedGuests.value = [...names];
-}, { immediate: true });
 
 const alcohol = ref<string[]>([]);
 const isSubmitting = ref(false);

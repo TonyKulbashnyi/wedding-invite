@@ -41,7 +41,6 @@ const swatches: Swatch[] = [
   { label: "Хвоя", hex: "#3b421d" },
   { label: "Мох", hex: "#646940" },
   { label: "Шавлія", hex: "#a8ae85" },
-  { label: "Крем", hex: "#f5f2e6", color: "#9c8f7a" },
   { label: "Графіт", hex: "#4a4a48" },
   { label: "Береза", hex: "#cac7c1" },
   { label: "Тауп", hex: "#9c8f7a" },
@@ -63,7 +62,7 @@ const swatches: Swatch[] = [
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    gap: 2rem;
+    gap: 4rem;
 
     @media (min-width: theme("screens.md")) {
       align-items: flex-start;

@@ -5,8 +5,8 @@
       <img :src="locationIcon" alt="Місце" class="location__icon" />
     </div>
     <div class="location__content pt-20">
-      <h2 class="location__title capitalize text-xl sm:text-2xl text-green mb-4">
-        Будемо чекати вас за адресою:
+      <h2 class="location__title text-xl sm:text-2xl text-green mb-4">
+        З нетерпінням чекатимемо за адресою:
       </h2>
       <p class="location__address text-md text-green mb-4">
         {{ address }}

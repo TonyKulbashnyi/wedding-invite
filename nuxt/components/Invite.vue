@@ -18,9 +18,7 @@
       </h2>
 
       <p class="px-6 text-center font-serif text-md text-green mb-8">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam minus
-        iste cupiditate repellendus porro reiciendis dignissimos voluptates
-        illo.
+        Запрошуємо на наше весілля. Справжні почуття потребують свідків — тих, хто є частиною нашого життя. Будемо щасливі розділити ці миті разом і наповнити цей день теплом.
       </p>
     </div>
     <div class="invite__info">

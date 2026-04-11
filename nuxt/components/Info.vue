@@ -1,21 +1,17 @@
 <template>
-  <section id="info" class="relative py-20 px-6 overflow-hidden bg-cream">
+  <section id="info" class="relative pt-10 pb-10 px-6 overflow-hidden bg-cream">
     <div class="relative z-10 max-w-3xl mx-auto text-center">
-      <h2
-        class="info-title relative z-10 pb-4 md:mb-mx-auto text-center font-script text-7xl md:text-8xl text-green leading-none"
-      >
-        Додаткова інформація
-      </h2>
-      <p class="text-center font-serif text-md text-green mb-4">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam minus
-        iste cupiditate repellendus porro reiciendis dignissimos voluptates
-        illo.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam minus
-        iste cupiditate repellendus porro reiciendis dignissimos voluptates
-        illo.
+      <img :src="infoIcon" alt="Додаткова інформація" class="info__icon mb-5" />
+      <p class="text-center font-serif text-md text-green mb-4 px-3">
+        Ваші усмішки, теплі слова й святковий настрій — найцінніше для нас у цей день.
+        <br><br>
+        Якщо захочеться привітати нас додатково, будемо вдячні за побажання в конверті — такий подарунок стане приємним внеском у здійснення спільних мрій.   
+        <br><br>
+        Замість традиційних букетів чудовим компліментом стане «квіткова підписка», що ще довго нагадуватиме про це свято.
       </p>
       <div class="mt-6">
         <a
-          href="https://drive.google.com/file/d/1mhx5i_zviODrCanyxNh59yJyofIU4jJc/view"
+          href="https://drive.google.com/file/d/1AxfL_HmGGJZzxjTQLTms0GajEJHhSydk/view"
           target="_blank"
           rel="noopener noreferrer"
           class="info__btn"
@@ -29,6 +25,7 @@
 
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from "vue";
+import infoIcon from '~/assets/img/info-icon.png';
 
 const scrollY = ref(0);
 
@@ -55,6 +52,19 @@ const parallaxStyle = computed(() => {
 </script>
 
 <style lang="scss" scoped>
+.info__icon {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75%;
+  height: auto;
+
+
+  @media (min-width: theme('screens.md')) {
+    width: 50%;
+  }
+}
+
 .info__btn {
   display: inline-block;
   background-color: theme('colors.moss');

@@ -7,10 +7,8 @@
         Дресс-код
       </h2>
 
-      <p class="px-6 text-center font-serif text-md text-green mb-4">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam minus
-        iste cupiditate repellendus porro reiciendis dignissimos voluptates
-        illo.
+      <p class="px-6 text-center font-serif text-md text-green mb-8">
+        Гармонія свята створюється у деталях. Будемо щиро вдячні за підтримку кольорової гами у святкових образах.
       </p>
     </div>
     <DresscodeContent :visible="isVisible" />
