@@ -28,7 +28,6 @@
 
 <script setup lang="ts">
 import Dresscode from "~/assets/img/dresscode.png";
-
 defineProps<{ visible?: boolean }>();
 
 interface Swatch {
