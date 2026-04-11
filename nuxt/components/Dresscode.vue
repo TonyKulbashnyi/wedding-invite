@@ -47,7 +47,7 @@ onBeforeUnmount(() => {
 .dresscode {
   display: flex;
   flex-direction: column;
-  height: 100dvh;
+  height: 100vh;
   min-height: 0;
   overflow: hidden;
   box-sizing: border-box;
