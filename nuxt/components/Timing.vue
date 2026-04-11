@@ -57,6 +57,10 @@ const slots = [
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1;
+  visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform;
   
 
 

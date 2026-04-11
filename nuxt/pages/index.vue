@@ -7,13 +7,13 @@
     </div>
     <main>
     
-      <Greeting />
+      <Greeting :style="greetingHidden ? { visibility: 'hidden' } : {}" />
       <div ref="overlapRef" class="overlap">
         <Invite />
         <Location />
       </div>
-      <Timing :style="overlapScrolled ? { zIndex: 1 } : {}" />
-      <div class="overlap overlap--second">
+      <Timing :style="timingVisible && !timingHidden ? { visibility: 'visible' } : {}" />
+      <div ref="overlapSecondRef" class="overlap overlap--second">
         <Dresscode />
         <FeedbackForm />
         <Info />
@@ -31,12 +31,43 @@ import { useRoute } from 'vue-router';
 import { useGuestStore } from '~/stores/guestStore';
 
 const overlapRef = ref<HTMLElement | null>(null);
-const overlapScrolled = ref(false);
+const overlapSecondRef = ref<HTMLElement | null>(null);
+const greetingHidden = ref(false);
+const timingVisible = ref(false);
+const timingHidden = ref(false);
+
+// Hysteresis buffer (px) to prevent flickering at scroll threshold boundaries
+const HYSTERESIS = 50;
 
 function onScroll() {
-  if (!overlapRef.value) return;
-  const rect = overlapRef.value.getBoundingClientRect();
-  overlapScrolled.value = rect.bottom <= window.innerHeight;
+  if (overlapRef.value) {
+    const rect = overlapRef.value.getBoundingClientRect();
+
+    // Greeting: hide once overlap's top edge reaches viewport top (Greeting fully covered)
+    if (rect.top <= 0) {
+      greetingHidden.value = true;
+    } else if (rect.top > HYSTERESIS) {
+      greetingHidden.value = false;
+    }
+
+    // Timing: show once overlap has fully scrolled out of the viewport (bottom edge exits)
+    if (rect.bottom <= window.innerHeight - HYSTERESIS) {
+      timingVisible.value = true;
+    } else if (rect.bottom > window.innerHeight) {
+      timingVisible.value = false;
+    }
+  }
+
+  if (overlapSecondRef.value) {
+    const rect2 = overlapSecondRef.value.getBoundingClientRect();
+
+    // Timing: hide once overlap-second's top edge reaches viewport top (Timing fully covered)
+    if (rect2.top <= 0) {
+      timingHidden.value = true;
+    } else if (rect2.top > HYSTERESIS) {
+      timingHidden.value = false;
+    }
+  }
 }
 
 onMounted(() => window.addEventListener('scroll', onScroll, { passive: true }));
