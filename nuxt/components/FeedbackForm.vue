@@ -3,19 +3,19 @@
     <div class="rsvp__form text-center max-w-2xl mx-auto border border-white/10 bg-charcoal/80 backdrop-blur-sm p-6 sm:p-8">
       <div class="mb-6">
         <h2 class="font-serif text-2xl sm:text-3xl text-white mb-4">
-          Підтвердіть, будь ласка, вашу присутність
+          Підтвердіть присутність
         </h2>
         <p class="text-md text-white ">
-          Планування кожної деталі потребує часу та уваги — ваша відповідь допоможе зробити свято комфортним для кожного гостя 
+          Будемо вдячні за відповідь, щоб завчасно подбати про комфорт для кожного гостя.
         </p>
       </div>
       <form class="space-y-5" @submit.prevent="handleSubmit">
 
         <div class="space-y-4">
-          <p class="block text-left text-md font-medium tracking-[0.1em] uppercase text-white">
+          <p class="block text-left text-sm font-medium tracking-[0.1em] uppercase text-white">
             Позначте, хто приєднається:
           </p>
-          <div class="space-y-4 text-sm text-white">
+          <div class="space-y-2 text-sm text-white">
             <label
               v-for="name in guestNames"
               :key="name"
@@ -32,7 +32,7 @@
         </div>
 
         <div class="space-y-4">
-          <p class="text-left block text-md font-medium tracking-[0.1em] uppercase text-white">
+          <p class="text-left block text-sm font-medium tracking-[0.1em] uppercase text-white">
             Побажання щодо напоїв:
           </p>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-white">
@@ -54,9 +54,7 @@
 
         <div class="text-xs text-white/50">
           <p>
-            <span class="font-semibold text-white">Просимо надіслати підтвердження до 1 червня 2026 року,</span>
-            щоб була можливість врахувати всі побажання при плануванні свята.
-
+            <span class="font-semibold text-white">Просимо надіслати підтвердження <br>до 1 червня 2026 року.</span>
           </p>
         </div>
 

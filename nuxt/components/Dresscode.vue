@@ -1,8 +1,8 @@
 <template>
   <section id="dresscode" ref="sectionRef" class="dresscode bg-cream mx-auto">
-    <div class="dresscode__header pt-8">
+    <div class="dresscode__header pt-12">
       <h2
-        class="dresscode-title px-6 relative z-10 pb-4 md:mb-mx-auto text-center font-script text-7xl md:text-8xl text-green leading-none"
+        class="dresscode-title px-6 relative z-10 pb-2 pt-4 md:mb-mx-auto text-center font-script text-7xl md:text-8xl text-green leading-none"
       >
         Дресс-код
       </h2>
