@@ -1,6 +1,6 @@
 <template>
   <section id="timing" class="timing">
-    <h2 class="timing__title invite-title px-6 relative z-10 pt-12 md:mb-mx-auto text-center font-script text-7xl md:text-8xl text-white leading-none pt-20 pb-24">
+    <h2 class="timing__title invite-title px-6 relative z-10 md:mb-mx-auto text-center font-script text-7xl md:text-8xl text-white leading-none pt-24 pb-20">
       Таймінг
     </h2>
     <div class="timing__slots container mx-auto text-white text-2xl md:text-4xl px-8 md:px-10 uppercase">
