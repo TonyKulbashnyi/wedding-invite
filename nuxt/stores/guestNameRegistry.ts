@@ -31,6 +31,7 @@ export const GUEST_NAME_KEY_TO_UA: Readonly<Record<string, string>> = {
   adam: 'Адам',   
   marina: 'Марина',
   nastia: 'Настя',
+  anastasia: 'Анастасія',
 };
 
 /** Для звертання в invite-title (Шановний / Шановна / Шановні) */
@@ -76,8 +77,11 @@ export const GUEST_PAIRS_WITH_SHARED_SURNAME: readonly GuestSurnamePairConfig[] 
       firstKey: 'Serhii',
       secondKey: 'Marina' ,
       tertiaryKey: 'Sofia',
-      forthKey: 'Nastya',
       surname: 'Колесникові',
+    },
+    {
+      firstKey: 'anastasia',
+      surname: 'Колесникова',
     },
     {
       firstKey: 'Anton',
